@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/small_window_layout"
+    android:layout_width="60dip"
+    android:layout_height="60dip"
+    android:background="@drawable/bg_special_disease_circle"
+    >
+    <!--<TextView-->
+        <!--android:id="@+id/percent"-->
+        <!--android:layout_width="30dip"-->
+        <!--android:layout_height="30dip"-->
+        <!--android:gravity="center"-->
+        <!--/>-->
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_star"
+        />
+
+    <!--<Button-->
+        <!--android:id="@+id/say"-->
+        <!--android:layout_width="40dip"-->
+        <!--android:layout_height="40dip"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:background="@drawable/bg_special_disease_circle"-->
+        <!--/>-->
+</LinearLayout>
