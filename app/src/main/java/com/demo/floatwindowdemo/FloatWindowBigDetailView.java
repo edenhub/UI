@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,19 +30,21 @@ public class FloatWindowBigDetailView extends LinearLayout {
         super(context);
         LayoutInflater.from(context).inflate(R.layout.float_window_big_detail,this);
         View view = findViewById(R.id.big_window_layout_detail);
-        viewHeight = view.getHeight();
-        viewWidth = view.getWidth();
+        viewWidth = view.getLayoutParams().width;
+        viewHeight = view.getLayoutParams().height;
 
-        detailList = (ListView) findViewById(R.id.window_big_detail);
-        System.err.println("out==========");
-        List<String> datas = new ArrayList<>();
-        for(int i=0;i<10;i++)
-            datas.add("data_"+i);
+        Toast.makeText(context,"Big detail",Toast.LENGTH_SHORT).show();
 
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(context,
-                android.R.layout.simple_list_item_1,datas);
-
-        detailList.setAdapter(dataAdapter);
+//        detailList = (ListView) findViewById(R.id.window_big_detail);
+//        System.err.println("out==========");
+//        List<String> datas = new ArrayList<>();
+//        for(int i=0;i<10;i++)
+//            datas.add("data_"+i);
+//
+//        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(context,
+//                android.R.layout.simple_list_item_1,datas);
+//
+//        detailList.setAdapter(dataAdapter);
     }
 
 

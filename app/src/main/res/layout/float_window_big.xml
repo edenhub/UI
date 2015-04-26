@@ -3,26 +3,29 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/big_window_layout"
     android:layout_width="200dip"
-    android:layout_height="100dip"
+    android:layout_height="300dip"
     android:background="@color/gray"
     android:orientation="vertical"
     >
-    <Button
-        android:id="@+id/close"
-        android:layout_width="40dip"
-        android:layout_height="40dip"
-        android:layout_gravity="center"
-        android:layout_marginTop="12dip"
-        android:textColor="@color/white"
-        android:background="@drawable/bg_special_disease_circle"
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/listviewe_v"></ListView>
+    <!--<Button-->
+        <!--android:id="@+id/close"-->
+        <!--android:layout_width="40dip"-->
+        <!--android:layout_height="40dip"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="12dip"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:background="@drawable/bg_special_disease_circle"-->
 
-        />
+        <!--/>-->
     <Button
         android:id="@+id/back"
         android:layout_width="40dip"
         android:layout_height="40dip"
         android:layout_gravity="center"
         android:textColor="@color/white"
-        android:background="@drawable/bg_special_disease_circle"
         />
 </LinearLayout>

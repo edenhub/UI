@@ -24,8 +24,8 @@ public class MyWindowManager {
     /** 
      * 大悬浮窗View的实例 
      */  
-//    private static FloatWindowBigView bigWindow;
-    private static FloatWindowBigDetailView bigWindow;
+    private static FloatWindowBigView bigWindow;
+//    private static FloatWindowBigDetailView bigWindow;
     /** 
      * 小悬浮窗View的参数 
      */  
@@ -100,8 +100,8 @@ public class MyWindowManager {
         int screenWidth = windowManager.getDefaultDisplay().getWidth();  
         int screenHeight = windowManager.getDefaultDisplay().getHeight();  
         if (bigWindow == null) {  
-//            bigWindow = new FloatWindowBigView(context);
-            bigWindow = new FloatWindowBigDetailView(context);
+            bigWindow = new FloatWindowBigView(context);
+//            bigWindow = new FloatWindowBigDetailView(context);
             if (bigWindowParams == null) {  
                 bigWindowParams = new LayoutParams();  
                 bigWindowParams.x = screenWidth / 2 - FloatWindowBigView.viewWidth / 2;  

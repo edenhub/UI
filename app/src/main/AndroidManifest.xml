@@ -23,6 +23,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="com.demo.floatwindowdemo.ListDetail"
+            android:label="listDeail" android:theme="@android:style/Theme.Dialog"/>
+
         <service android:name="com.demo.floatwindowdemo.FloatWindowService">
         </service>
     </application>

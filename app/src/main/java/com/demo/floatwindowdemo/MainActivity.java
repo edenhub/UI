@@ -31,7 +31,8 @@ public class MainActivity extends Activity {
         startBigWindow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MyWindowManager.createBigWindow(getApplicationContext());
+                Intent intent = new Intent(getApplicationContext(),ListDetail.class);
+                startActivity(intent);
             }
         });
     }

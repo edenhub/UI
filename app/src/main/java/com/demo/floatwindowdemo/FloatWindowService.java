@@ -76,14 +76,14 @@ public class FloatWindowService extends Service {
                 });  
             }  
             // 当前界面是桌面，且有悬浮窗显示，则更新内存数据。  
-            else if (isHome() && MyWindowManager.isWindowShowing()) {  
-                handler.post(new Runnable() {  
-                    @Override  
-                    public void run() {  
-                        MyWindowManager.updateUsedPercent(getApplicationContext());  
-                    }  
-                });  
-            }  
+//            else if (isHome() && MyWindowManager.isWindowShowing()) {
+//                handler.post(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        MyWindowManager.updateUsedPercent(getApplicationContext());
+//                    }
+//                });
+//            }
         }  
   
     }  

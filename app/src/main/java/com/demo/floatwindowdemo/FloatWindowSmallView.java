@@ -1,6 +1,7 @@
 package com.demo.floatwindowdemo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -111,7 +112,10 @@ public class FloatWindowSmallView extends LinearLayout {
             // 如果手指离开屏幕时，xDownInScreen和xInScreen相等，且yDownInScreen和yInScreen相等，则视为触发了单击事件。  
             if (xDownInScreen == xInScreen && yDownInScreen == yInScreen) {
 //                openBigWindow();
+                Intent intent = new Intent(getContext(),ListDetail.class);
                 Toast.makeText(this.getContext(),"Say something",Toast.LENGTH_SHORT).show();
+                getContext().getApplicationContext().startActivity(intent);
+
             }
             break;  
         default:  
