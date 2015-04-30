@@ -24,6 +24,14 @@
             android:layout_height="wrap_content"
             android:text="Start Big Window">
         </Button>
+
+        <Button
+            android:layout_below="@+id/start_big_window"
+            android:id="@+id/start_voice_window"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="VOice">
+        </Button>
     </RelativeLayout>
 
 </RelativeLayout>

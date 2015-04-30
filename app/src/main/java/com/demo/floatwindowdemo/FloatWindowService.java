@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.PersistableBundle;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,12 +36,12 @@ public class FloatWindowService extends Service {
     }  
   
     @Override  
-    public int onStartCommand(Intent intent, int flags, int startId) {  
-        // 开启定时器，每隔0.5秒刷新一次  
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        // 开启定时器，每隔0.5秒刷新一次
         if (timer == null) {  
             timer = new Timer();  
-            timer.scheduleAtFixedRate(new RefreshTask(), 0, 500);  
-        }  
+            timer.scheduleAtFixedRate(new RefreshTask(), 0, 500);
+        }
         return super.onStartCommand(intent, flags, startId);  
     }  
   
@@ -55,27 +56,29 @@ public class FloatWindowService extends Service {
     class RefreshTask extends TimerTask {
   
         @Override  
-        public void run() {  
-            // 当前界面是桌面，且没有悬浮窗显示，则创建悬浮窗。  
-            if (isHome() && !MyWindowManager.isWindowShowing()) {  
-                handler.post(new Runnable() {  
-                    @Override  
-                    public void run() {  
-                        MyWindowManager.createSmallWindow(getApplicationContext());  
-                    }  
-                });  
-            }  
-            // 当前界面不是桌面，且有悬浮窗显示，则移除悬浮窗。  
-            else if (!isHome() && MyWindowManager.isWindowShowing()) {  
-                handler.post(new Runnable() {  
-                    @Override  
-                    public void run() {  
-                        MyWindowManager.removeSmallWindow(getApplicationContext());  
-                        MyWindowManager.removeBigWindow(getApplicationContext());  
-                    }  
-                });  
-            }  
-            // 当前界面是桌面，且有悬浮窗显示，则更新内存数据。  
+        public void run() {
+            if (isHome() && !MyWindowManager.isWindowShowing()) {
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(),"aFTER SMALL",Toast.LENGTH_LONG).show();
+//                        MyWindowManager.createSmallWindow(getApplicationContext());
+                        MyWindowManager.createSmallWindow(FloatWindowService.this);
+                    }
+                });
+            }
+            // 当前界面不是桌面，且有悬浮窗显示，则移除悬浮窗。
+            else if (!isHome() && MyWindowManager.isWindowShowing()) {
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        MyWindowManager.removeSmallWindow(getApplicationContext());
+                        MyWindowManager.removeBigWindow(getApplicationContext());
+                    }
+                });
+            }
+            // 当前界面是桌面，且没有悬浮窗显示，则创建悬浮窗。
+            // 当前界面是桌面，且有悬浮窗显示，则更新内存数据。
 //            else if (isHome() && MyWindowManager.isWindowShowing()) {
 //                handler.post(new Runnable() {
 //                    @Override
